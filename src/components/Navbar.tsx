@@ -17,7 +17,11 @@ export const Navbar = () => {
             <a href="#projects">Projects</a>
           </Button>
           <Button asChild>
-            <a href="mailto:your-email@example.com">Contact Me</a>
+            <a 
+            href="https://www.linkedin.com/in/hari-kishoare-s"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Contact Me</a>
           </Button>
         </div>
       </div>
