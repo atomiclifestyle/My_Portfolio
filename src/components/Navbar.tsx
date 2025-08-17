@@ -6,7 +6,7 @@ export const Navbar = () => {
   return (
     <div className="navbar bg-base-100/50 backdrop-blur-sm sticky top-0 z-50">
       <div className="navbar-start">
-        <a className="btn btn-ghost text-xl font-bold">MyPortfolio</a>
+        <a className="btn btn-ghost text-xl font-bold">Hari Kishore</a>
       </div>
       <div className="navbar-end">
         <div className="hidden md:flex gap-2">

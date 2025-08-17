@@ -59,7 +59,7 @@ const ProjectCard = ({ title, description, icon, href, className }: any) => {
 const projectData = [
   {
     title: 'Build on Bhuvan: Geospatial Toolkit',
-    description: "A developer-centric platform and SDK for GIS application development using ISRO's Bhuvan Geoportal.",
+    description: "A platform and SDK for GIS application development using ISRO's Bhuvan Geoportal.",
     icon: <Globe className="h-8 w-8" />,
     href: 'https://github.com/atomiclifestyle/frontend-kit-bhuvan',
     className: '', // This project will span two columns on medium screens

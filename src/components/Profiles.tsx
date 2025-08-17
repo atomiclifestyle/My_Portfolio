@@ -17,23 +17,19 @@ const profilesData = [
   {
     title: 'LeetCode',
     username: 'harihk24',
-    href: 'https://leetcode.com/u/harihk24',
+    href: 'https://codolio.com/profile/harihk24',
     icon: <Code className="h-8 w-8" />,
     graphScreenshotUrl: '/assets/leetcode-graph2.PNG',
     fullScreenshotUrl: '/assets/leetcode-full.PNG',
   },
 ];
 
-// ## 1. Create a separate component for the card
-// All state and logic for a single card lives inside here.
 const ProfileCard = ({ profile }: { profile: typeof profilesData[0] }) => {
-  // State and Refs belong to THIS card instance ONLY
   const [isHovered, setIsHovered] = useState(false);
   const [cardHeight, setCardHeight] = useState<number | 'auto'>('auto');
   const graphRef = useRef<HTMLImageElement>(null);
   const fullRef = useRef<HTMLImageElement>(null);
 
-  // Measure initial height from the graph image
   useLayoutEffect(() => {
     const setInitialHeight = () => {
       if (graphRef.current) {
@@ -41,7 +37,6 @@ const ProfileCard = ({ profile }: { profile: typeof profilesData[0] }) => {
       }
     };
     
-    // Ensure image is loaded before measuring
     if (graphRef.current?.complete) {
         setInitialHeight();
     } else if (graphRef.current) {
@@ -51,20 +46,19 @@ const ProfileCard = ({ profile }: { profile: typeof profilesData[0] }) => {
 
   const handleMouseEnter = () => {
     if (fullRef.current) {
-      setCardHeight(fullRef.current.offsetHeight); // Expand to full image height
+      setCardHeight(fullRef.current.offsetHeight);
     }
     setIsHovered(true);
   };
 
   const handleMouseLeave = () => {
     if (graphRef.current) {
-      setCardHeight(graphRef.current.offsetHeight); // Shrink to graph image height
+      setCardHeight(graphRef.current.offsetHeight);
     }
     setIsHovered(false);
   };
 
   return (
-    // ## 2. Event handlers are attached to this specific card
     <a
       href={profile.href}
       target="_blank"
@@ -81,12 +75,10 @@ const ProfileCard = ({ profile }: { profile: typeof profilesData[0] }) => {
             <p className="text-sm text-muted-foreground">{profile.username}</p>
           </div>
         </CardHeader>
-        {/* This div animates its height based on this card's specific state */}
         <div
           style={{ height: cardHeight }}
           className="relative transition-[height] duration-300 ease-in-out"
         >
-          {/* Images are positioned absolutely within the animated container */}
           <img
             ref={graphRef}
             src={profile.graphScreenshotUrl}

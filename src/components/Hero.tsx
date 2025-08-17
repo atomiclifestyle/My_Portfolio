@@ -16,17 +16,14 @@ export const Hero = () => {
         backgroundAttachment: 'fixed',
       }}
     >
-      {/* Background overlay for better text readability */}
       <div className="absolute inset-0 bg-black/60"></div>
 
       <div className="hero-content text-center text-neutral-content relative z-10">
-        {/* 2. Styled black box */}
         <div className="max-w-2xl bg-black/70 p-8 rounded-xl border border-white/10 shadow-2xl backdrop-blur-sm">
           {/* <h1 className="mb-4 text-4xl md:text-5xl font-bold">
             Hello, I'm a
           </h1> */}
           
-          {/* 3. Typewriter animation */}
           <TypeAnimation
             sequence={[
               'Code.',
@@ -47,14 +44,12 @@ export const Hero = () => {
             I build modern, efficient, and scalable applications with a passion for technology and creative problem-solving.
           </p> */}
 
-          {/* 4. View work and My Resume Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
             <Button size="lg" asChild>
               <a href="#projects">View My Work</a>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              {/* Make sure to add your resume to the `public` folder */}
-              <a href="/resume.pdf" download="My_Resume.pdf">
+              <a href="/resume.pdf" download="Hari's_Resume.pdf">
                 <Download className="mr-2 h-5 w-5" />
                 My Resume
               </a>
